@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  p{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  body {
+    overflow: hidden;
+  }
+  .asteroid {
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 50% 0 50%;
+    background-color: gray;
+    animation: moveAsteroid 2.5s linear 1;
+  }
+  @keyframes moveAsteroid {
+    from {left: -50px;}
+    to {left: calc(100% + 50px);}
+  }
+</style>
+</head>
+<body>
+<p>
+    The Double Asteroid Redirection Test (DART) mission is a NASA space exploration project designed to test whether a spacecraft impact can deflect the trajectory of an asteroid. The mission is set to launch in November 2021 and will target the asteroid Didymos, which is part of a binary system consisting of a larger asteroid and a smaller moon-like asteroid. The DART spacecraft will fly to Didymos and collide with the smaller asteroid at a speed of approximately 6 kilometers per second, using its kinetic energy to change the asteroid's trajectory. The impact is expected to create a crater and alter the asteroid's motion by a fraction of a percent, which will be observed and measured by ground-based telescopes and a European Space Agency (ESA) spacecraft called Hera. The DART mission is important because it will help us better understand the nature of asteroids and their potential impact on Earth. By demonstrating the ability to deflect an asteroid, we can develop strategies to mitigate the risk of a potential future impact. The information gathered from the DART mission will also be useful for planning future asteroid exploration missions and for developing technologies to protect our planet from asteroid impacts. Overall, the DART mission is an exciting and important step in our ongoing efforts to explore and understand our solar system, and to safeguard our planet from potential threats.
+  </p>
+
+<div class="asteroid"></div>
+
+<script>
+  const asteroid = document.querySelector('.asteroid');
+ setTimeout(() => {
+    document.body.style.transform = 'rotate(15deg)';
+     asteroid.remove();
+   
+  }, 2500); 
+</script>
+
+</body>
+</html>
