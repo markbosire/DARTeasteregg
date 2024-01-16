@@ -20,7 +20,7 @@ This API provides a simple endpoint to retrieve the dominant color of an image u
 ```javascript
 const axios = require('axios');
 
-const apiUrl = 'https://your-api-url.com/getDominantColor';
+const apiUrl = 'https://imageapi-ten.vercel.app/getDominantColor';
 const imageUrl = 'https://example.com/image.jpg';
 
 axios.post(apiUrl, { imageUrl })
@@ -31,3 +31,22 @@ axios.post(apiUrl, { imageUrl })
   .catch(error => {
     console.error('Error:', error.message || error);
   });
+```
+### Python
+
+```python
+import requests
+
+api_url = "https://imageapi-ten.vercel.app/getDominantColor"
+image_url = "https://example.com/image.jpg"
+
+response = requests.post(api_url, json={"imageUrl": image_url})
+result = response.json()
+
+dominant_color = result.get("dominantColor")
+print(f"Dominant Color: {dominant_color}")
+```
+
+```curl
+curl -X POST -H "Content-Type: application/json" -d '{"imageUrl": "https://example.com/image.jpg"}' https://imageapi-ten.vercel.app/getDominantColor
+
